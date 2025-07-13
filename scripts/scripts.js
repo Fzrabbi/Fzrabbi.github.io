@@ -89,20 +89,192 @@ anchor.addEventListener('click', function (e) {
 }
 });
 
-    // Event listener for the Resume button
-    document.getElementById('openResumeModalBtn').addEventListener('click', () => {
-    openModal('resumeModal');
-});
+        // Event listener for the Resume button
+        document.getElementById('openResumeModalBtn').addEventListener('click', () => {
+            openModal('resumeModal');
+        });
 
-    // Close modals when clicking outside (on overlay)
-    document.getElementById('projectModal').addEventListener('click', (e) => {
-    if (e.target.id === 'projectModal') {
-    closeModal('projectModal');
-}
-});
-    document.getElementById('resumeModal').addEventListener('click', (e) => {
-    if (e.target.id === 'resumeModal') {
-    closeModal('resumeModal');
-}
-});
+        // Event listener for the CV Matcher button in the navigation bar
+        document.getElementById('openCvMatcherModalBtnNav').addEventListener('click', () => {
+            openModal('cvMatcherModal');
+        });
+
+        // Event listener for the CV Matcher button in the new section at the bottom
+        document.getElementById('openCvMatcherModalBtnSection').addEventListener('click', () => {
+            openModal('cvMatcherModal');
+        });
+
+        // Close modals when clicking outside (on overlay)
+        document.getElementById('projectModal').addEventListener('click', (e) => {
+            if (e.target.id === 'projectModal') {
+                closeModal('projectModal');
+            }
+        });
+        document.getElementById('resumeModal').addEventListener('click', (e) => {
+            if (e.target.id === 'resumeModal') {
+                closeModal('resumeModal');
+            }
+        });
+        document.getElementById('cvMatcherModal').addEventListener('click', (e) => {
+            if (e.target.id === 'cvMatcherModal') {
+                closeModal('cvMatcherModal');
+            }
+        });
+
+        // CV Matcher Logic
+        const resumeText = `
+            FAZLEY RABBI
+            Dhaka, Bangladesh | +880-16812-31269 | fazleybiswas143@gmail.com | LinkedIn | GitHub | Leetcode | Portfolio
+            SENIOR SOFTWARE ENGINEER
+            Senior Software Engineer with over 5 years of experience in designing, developing, and deploying robust web and AI applications. Proven ability to optimize system performance, streamline development workflows, and implement scalable solutions. Expertise includes Python, Django, FastAPI, React.js, microservices architecture, and prompt engineering with advanced AI models like Gemini Flash 2.0. Skilled in implementing best practices such as Factory and Builder design patterns to enhance code quality and maintainability. Seeking to leverage a strong track record of delivering measurable improvements in efficiency and speed to contribute significantly to a forward-thinking company.
+            EXPERIENCE
+            Tally-khata, Dhaka, Bangladesh
+            Senior Software Engineer- Sep 2024 - Present
+            Software Engineer - Dec 2022-Sep 2024
+            • Designed and implemented a new micro-service architecture (File service) using Fast API to improve application performance by 20%.
+            • Developed and optimized the Ankona AI service, leveraging the Gemini Flash 2.0 model for Bangla text recognition and classification, significantly enhancing user instruction processing.
+            • Performed prompt engineering, including model training and rigorous accuracy testing, to refine the Ankona AI's classification capabilities.
+            • Built API's for onboarding services using Django Rest Framework and RabbitMQ to make the system more reliable.
+            • Implemented Factory and Builder design patterns within the onboarding application to enhance modularity, flexibility, and maintainability of features.
+            • Important migration script (Celery, Celery-beat, multiprocessing) that made the migration process 25% faster.
+            • Implemented CDN using Amazon CloudFront to serve files that made the process 80% faster.
+            • Write test cases using pytest which improved the testing process 40%.
+            • Refactor React.js front-end code base from axios to RTK query to achieve caching mechanism and gain 20% faster response time.
+            Riseup Labs, Dhaka, Bangladesh
+            Python Developer (Freelance Project)- May 2024-July 2024
+            • Developed a Django-based backend system integrating with AWS IoT service for physical device usage analytics and reporting.
+            • Engineered a robust data pipeline to process and migrate over 1,000,000 daily IoT entries from MongoDB to PostgreSQL for analytical purposes.
+            • Implemented Celery Beat for automated, scheduled data aggregation and transfer, managing device data from three different countries and timezones.
+            BRAC IT, Dhaka, Bangladesh
+            Software Engineer - July 2022-Dec 2022
+            • Develop web based Micro finance applications for BRAC.
+            • Integrate new features (ex: Keycloak) on existing Legacy Application.
+            • Important migration script that made the migration process 25% faster.
+            • Framework & tools - Laravel, CodeIgniter, Yii.
+            Sheba Platform Limited (sheba.xyz/ Now Polygon Technology), Dhaka, Bangladesh
+            Software Engineer - Feb 2022-July 2022
+            • Develop APIs for sManager mobile app on different projects and Platform ex- Accounting (FastAPI Python), API Project (PHP Laravel), Partner Project (PHP Laravel).
+            • URL shortener (Flask python) that makes the application 25% efficient.
+            • Work With Repository, Service Design pattern and deployment of Project in Cloud Server.
+            • REDIS and other Service integration
+            LABAID (LifePlusBD) - Dhaka, Bangladesh - Software Engineer
+            Feb 2021-Feb 2022
+            • Develop the POC(Proof Of Concept) for a successful new approach and pattern to improve development 20% faster.
+            • Design features System Architectures, Develop API to integrate with mobile app.
+            • Develop web server side solution With MVC Architecture with PHP, ES6. And configure & Management of AWS Services.
+            Asiatic Optimum Services Ltd, Dhaka, Bangladesh - JR Software Engineer
+            Sep 2020-Jan 2021
+            • Develop Web applications Using MVC with PHP, Laravel Framework. Deploy project on VPS server..
+            Advance Technology Consortium Ltd(ATCL), Dhaka, Bangladesh- Support Engineer
+            June 2018-Aug 2020
+            • Provide full automation of Windows Form Application(c#, .net) support. Develop and automate the inventory, accounts, bill controlling into a compact
+            SKILLS & TECH STACK
+            Programming Languages & Frameworks: Python, PHP, React js, Django, FastApi, Laraavel, Flask
+            Services: Redis, Celery, Swagger, RabbitMq
+            Server: AWS, Bitbucket, S3, Minlo, CloudFront, Nginx
+            Database: MySql, Postgres, MongoDB
+            Tools: Git, Jira, Docker, Slack
+            EDUCATION
+            United International University (UIU), COMPUTER SCIENCE AND ENGINEERING, Dhaka, Bangladesh - BSc 2015-2019
+            BAF Shaheen College, Dhaka - HSC 2012-2014
+            `; // THIS IS A PLACEHOLDER. REPLACE WITH ACTUAL RESUME TEXT.
+
+        document.getElementById('compareCVBtn').addEventListener('click', async () => {
+            const jobDescription = document.getElementById('jobDescriptionInput').value;
+            const loadingIndicator = document.getElementById('loadingIndicator');
+            const cvMatchResults = document.getElementById('cvMatchResults');
+            const matchPercentageSpan = document.getElementById('matchPercentage');
+            const aiExpressionSpan = document.getElementById('aiExpression');
+            const aiConvincingMessageSpan = document.getElementById('aiConvincingMessage');
+
+            if (!jobDescription.trim()) {
+                alert('Please paste a job description to compare.'); // Using alert for simplicity, consider a custom modal
+                return;
+            }
+
+            loadingIndicator.classList.remove('hidden');
+            cvMatchResults.classList.add('hidden'); // Hide previous results
+
+            try {
+                let chatHistory = [];
+                const prompt = `Compare the following resume with the job description. Provide a match percentage (0-100), a short, cool and punchy expression based on the percentage, and if the percentage is 70 or higher, a short(150-200 words) convincing message to the recruiter on why this candidate should be hired. Lastly add some punchline ending.
+
+                    Resume:
+                    ${resumeText}
+
+                    Job Description:
+                    ${jobDescription}
+
+                    Output in JSON format with keys: "matchPercentage", "expression", "convincingMessage".`;
+
+                chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+                const payload = {
+                    contents: chatHistory,
+                    generationConfig: {
+                        responseMimeType: "application/json",
+                        responseSchema: {
+                            type: "OBJECT",
+                            properties: {
+                                "matchPercentage": { "type": "NUMBER" },
+                                "expression": { "type": "STRING" },
+                                "convincingMessage": { "type": "STRING" }
+                            },
+                            "propertyOrdering": ["matchPercentage", "expression", "convincingMessage"]
+                        }
+                    }
+                };
+                const apiKey = "AIzaSyBO1_ryl3pfGqMRsbDAqX3NfYmSJrN5j4g"; // Use gemini api key of your own
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                const result = await response.json();
+
+                if (result.candidates && result.candidates.length > 0 &&
+                    result.candidates[0].content && result.candidates[0].content.parts &&
+                    result.candidates[0].content.parts.length > 0) {
+                    const jsonText = result.candidates[0].content.parts[0].text;
+                    const parsedJson = JSON.parse(jsonText);
+
+                    matchPercentageSpan.textContent = `${parsedJson.matchPercentage}%`;
+                    aiExpressionSpan.textContent = parsedJson.expression;
+                    aiConvincingMessageSpan.textContent = parsedJson.convincingMessage;
+                    cvMatchResults.classList.remove('hidden');
+
+                    // Adjust color based on percentage
+                    if (parsedJson.matchPercentage >= 70) {
+                        matchPercentageSpan.classList.remove('text-red-400', 'text-yellow-400');
+                        matchPercentageSpan.classList.add('text-green-400');
+                    } else if (parsedJson.matchPercentage >= 40) {
+                        matchPercentageSpan.classList.remove('text-green-400', 'text-red-400');
+                        matchPercentageSpan.classList.add('text-yellow-400');
+                    } else {
+                        matchPercentageSpan.classList.remove('text-green-400', 'text-yellow-400');
+                        matchPercentageSpan.classList.add('text-red-400');
+                    }
+
+                } else {
+                    console.error("Unexpected API response structure:", result);
+                    aiExpressionSpan.textContent = "Error: Could not get a response.";
+                    aiConvincingMessageSpan.textContent = "Please try again.";
+                    cvMatchResults.classList.remove('hidden');
+                    matchPercentageSpan.textContent = "N/A";
+                    matchPercentageSpan.classList.add('text-red-400');
+                }
+
+            } catch (error) {
+                console.error("Error comparing CV:", error);
+                aiExpressionSpan.textContent = "Error: Something went wrong.";
+                aiConvincingMessageSpan.textContent = "Please check your network connection or try again later.";
+                cvMatchResults.classList.remove('hidden');
+                matchPercentageSpan.textContent = "N/A";
+                matchPercentageSpan.classList.add('text-red-400');
+            } finally {
+                loadingIndicator.classList.add('hidden');
+            }
+        });
 });

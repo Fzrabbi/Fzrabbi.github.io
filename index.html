@@ -24,6 +24,7 @@
             <a href="#skills" class="text-gray-300 hover:text-blue-400 transition-colors duration-300">Skills</a>
             <a href="#education" class="text-gray-300 hover:text-blue-400 transition-colors duration-300">Education</a>
             <button id="openResumeModalBtn" class="text-gray-300 hover:text-blue-400 transition-colors duration-300">Resume</button>
+            <button id="openCvMatcherModalBtnNav" class="text-gray-300 hover:text-blue-400 transition-colors duration-300">CV Matcher</button>
             <a href="#contact" class="text-gray-300 hover:text-blue-400 transition-colors duration-300">Contact</a>
         </div>
         <!-- Mobile Menu Button (Hamburger Icon) - Not implemented for brevity, but would go here -->
@@ -50,10 +51,10 @@
         </p>
         <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6">
             <!-- Social Links -->
-            <a href="http://linkedin.com/in/fazley-rabbi-68432711b" target="_blank" rel="noopener noreferrer" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl button-pulse">
+            <a href="https://linkedin.com/in/fazley-rabbi-68432711b" target="_blank" rel="noopener noreferrer" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl button-pulse">
                 LinkedIn
             </a>
-            <a href="http://github.com/Fzrabbi" target="_blank" rel="noopener noreferrer" class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl button-pulse">
+            <a href="https://github.com/Fzrabbi" target="_blank" rel="noopener noreferrer" class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl button-pulse">
                 GitHub
             </a>
         </div>
@@ -248,6 +249,15 @@
         </div>
     </section>
 
+    <!-- CV Matcher Section (Bottom of page) -->
+    <section id="cv-matcher-section" class="bg-gray-800 p-8 rounded-lg shadow-lg mb-12 text-center">
+        <h3 class="text-3xl font-bold text-gray-50 mb-8 section-title">CV Matcher</h3>
+        <p class="text-gray-300 mb-6 max-w-2xl mx-auto">Want to see how well my skills align with your opportunities? Click the button below to open the CV Matcher and compare my profile with your job description! Trust me you won't regret...!</p>
+        <button id="openCvMatcherModalBtnSection" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl button-pulse">
+            Open CV Matcher
+        </button>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact" class="bg-gray-800 p-8 rounded-lg shadow-lg">
         <h3 class="text-3xl font-bold text-gray-50 mb-8 section-title">Contact</h3>
@@ -289,6 +299,31 @@
             </a>
         </div>
         <iframe id="resumeIframe" src="./resources/resume.pdf" class="resume-iframe"></iframe>
+    </div>
+</div>
+
+<!-- CV Matcher Modal Structure -->
+<div id="cvMatcherModal" class="modal-overlay">
+    <div class="modal-content w-11/12 md:w-3/4 lg:w-1/2">
+        <button class="modal-close-button" onclick="closeModal('cvMatcherModal')">&times;</button>
+        <h3 class="text-2xl font-bold text-blue-400 mb-4">CV Matcher</h3>
+        <p class="text-gray-300 mb-6">Paste a job description below to see how well my CV matches, and get a personalized message for the recruiter!</p>
+        <textarea id="jobDescriptionInput" class="w-full h-48 p-4 rounded-lg bg-gray-700 text-gray-100 border border-gray-600 focus:outline-none focus:border-blue-500 resize-y mb-6" placeholder="Paste the job description here..."></textarea>
+        <button id="compareCVBtn" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl button-pulse w-full md:w-auto">
+            Compare CV
+        </button>
+        <div id="loadingIndicator" class="hidden text-center mt-4 text-blue-400">
+            <svg class="animate-spin h-6 w-6 text-blue-400 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
+            <p class="mt-2">Analyzing...</p>
+        </div>
+        <div id="cvMatchResults" class="mt-8 p-6 bg-gray-700 rounded-lg shadow-inner hidden">
+            <p class="text-xl font-semibold text-blue-400 mb-3">Match Percentage: <span id="matchPercentage" class="text-green-400"></span></p>
+            <p class="text-gray-200 mb-4"><span id="aiExpression"></span></p>
+            <p class="text-gray-300 leading-relaxed"><span id="aiConvincingMessage"></span></p>
+        </div>
     </div>
 </div>
 
