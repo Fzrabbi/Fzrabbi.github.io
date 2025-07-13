@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fazley Rabbi - Senior Software Engineer</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter font from Google Fonts -->
+    <script src="./scripts/scripts.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/styles.css">
+</head>
+<body class="min-h-screen bg-gray-900 font-sans text-gray-100 antialiased">
+
+<!-- Navigation Bar -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-gray-800 shadow-lg py-4">
+    <div class="container mx-auto flex justify-between items-center px-4 sm:px-6 lg:px-8">
+        <h1 class="text-2xl font-bold text-blue-400">FAZLEY RABBI</h1>
+        <div class="hidden md:flex space-x-6">
+            <a href="#home" class="text-gray-300 hover:text-blue-400 transition-colors duration-300">Home</a>
+            <a href="#experience" class="text-gray-300 hover:text-blue-400 transition-colors duration-300">Experience</a>
+            <a href="#projects" class="text-gray-300 hover:text-blue-400 transition-colors duration-300">Projects</a>
+            <a href="#skills" class="text-gray-300 hover:text-blue-400 transition-colors duration-300">Skills</a>
+            <a href="#education" class="text-gray-300 hover:text-blue-400 transition-colors duration-300">Education</a>
+            <button id="openResumeModalBtn" class="text-gray-300 hover:text-blue-400 transition-colors duration-300">Resume</button>
+            <a href="#contact" class="text-gray-300 hover:text-blue-400 transition-colors duration-300">Contact</a>
+        </div>
+        <!-- Mobile Menu Button (Hamburger Icon) - Not implemented for brevity, but would go here -->
+    </div>
+</nav>
+
+<!-- Main Content -->
+<main class="container mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-12">
+
+    <!-- Home/Hero Section -->
+    <section id="home" class="flex flex-col items-center text-center py-20 md:py-32 bg-gradient-to-br from-gray-800 to-gray-700 rounded-xl shadow-2xl mb-12 animate-fade-in">
+        <div class="w-50 h-50 rounded-full overflow-hidden mb-8 shadow-xl border-4 border-blue-500 transform transition-transform duration-300 hover:scale-105">
+            <img
+                    src="./resources/19F16B2B-5921-4C88-9709-0DFA78CAEFBC.png"
+                    alt="Fazley Rabbi Profile"
+                    class="w-full h-full object-cover"
+                    onerror="this.onerror=null;this.src='https://placehold.co/160x160/3B82F6/FFFFFF?text=FR';"
+            />
+        </div>
+        <h2 class="text-5xl sm:text-6xl font-extrabold text-gray-50 mb-4 leading-tight drop-shadow-lg">FAZLEY RABBI</h2>
+        <p class="text-2xl sm:text-3xl text-blue-400 font-medium mb-10 drop-shadow-md">SENIOR SOFTWARE ENGINEER</p>
+        <p class="max-w-4xl text-gray-300 text-lg sm:text-xl leading-relaxed mb-12">
+            Senior Software Engineer with over 5 years of experience in designing, developing, and deploying robust web and AI applications. Proven ability to optimize system performance, streamline development workflows, and implement scalable solutions. Expertise includes Python, Django, FastAPI, React.js, microservices architecture, and prompt engineering with advanced AI models like Gemini Flash 2.0. Skilled in implementing best practices such as Factory and Builder design patterns to enhance code quality and maintainability. Seeking to leverage a strong track record of delivering measurable improvements in efficiency and speed to contribute significantly to a forward-thinking company.
+        </p>
+        <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6">
+            <!-- Social Links -->
+            <a href="http://linkedin.com/in/fazley-rabbi-68432711b" target="_blank" rel="noopener noreferrer" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl button-pulse">
+                LinkedIn
+            </a>
+            <a href="http://github.com/Fzrabbi" target="_blank" rel="noopener noreferrer" class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl button-pulse">
+                GitHub
+            </a>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="bg-gray-800 p-8 rounded-lg shadow-lg mb-12">
+        <h3 class="text-3xl font-bold text-gray-50 mb-8 section-title">Experience</h3>
+        <div class="mb-8 pb-4 border-b border-gray-700 last:border-b-0 last:mb-0">
+            <h4 class="text-2xl font-semibold text-blue-400 mb-2">Tally-khata</h4>
+            <p class="text-gray-300 text-lg mb-4">Dhaka, Bangladesh</p>
+            <div class="mb-4">
+                <h5 class="text-xl font-medium text-gray-200">Senior Software Engineer <span class="text-gray-400 text-base ml-2">(Sep 2024 - Present)</span></h5>
+                <h5 class="text-xl font-medium text-gray-200">Software Engineer <span class="text-gray-400 text-base ml-2">(Dec 2022-Sep 2024)</span></h5>
+                <ul class="list-disc list-inside text-gray-300 mt-2 space-y-1">
+                    <li>Designed and implemented a new micro-service architecture (File service) using Fast API to improve application performance by 20%.</li>
+                    <li>Developed and optimized the Ankona AI service, leveraging the Gemini Flash 2.0 model for Bangla text recognition and classification, significantly enhancing user instruction processing.</li>
+                    <li>Performed prompt engineering, including model training and rigorous accuracy testing, to refine the Ankona AI's classification capabilities.</li>
+                    <li>Built APIs for onboarding services using Django Rest Framework and RabbitMQ to make the system more reliable.</li>
+                    <li>Implemented Factory and Builder design patterns within the onboarding application to enhance modularity, flexibility, and maintainability of features.</li>
+                    <li>Important migration script (Celery, Celery-beat, multiprocessing) that made the migration process 25% faster.</li>
+                    <li>Implemented CDN using Amazon CloudFront to serve files that made the process 80% faster.</li>
+                    <li>Write test cases using pytest which improved the testing process 40%.</li>
+                    <li>Refactor React.js front-end code base from axios to RTK query to achieve caching mechanism and gain 20% faster response time.</li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="mb-8 pb-4 border-b border-gray-700 last:border-b-0 last:mb-0">
+            <h4 class="text-2xl font-semibold text-blue-400 mb-2">Riseup Labs</h4>
+            <p class="text-gray-300 text-lg mb-4">Dhaka, Bangladesh</p>
+            <div class="mb-4">
+                <h5 class="text-xl font-medium text-gray-200">Python Developer (Freelance Project) <span class="text-gray-400 text-base ml-2">(May 2024-July 2024)</span></h5>
+                <ul class="list-disc list-inside text-gray-300 mt-2 space-y-1">
+                    <li>Developed a Django-based backend system integrating with AWS IoT service for physical device usage analytics and reporting.</li>
+                    <li>Engineered a robust data pipeline to process and migrate over 1,000,000 daily IoT entries from MongoDB to PostgreSQL for analytical purposes.</li>
+                    <li>Implemented Celery Beat for automated, scheduled data aggregation and transfer, managing device data from three different countries and timezones.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="mb-8 pb-4 border-b border-gray-700 last:border-b-0 last:mb-0">
+            <h4 class="text-2xl font-semibold text-blue-400 mb-2">BRAC IT</h4>
+            <p class="text-gray-300 text-lg mb-4">Dhaka, Bangladesh</p>
+            <div class="mb-4">
+                <h5 class="text-xl font-medium text-gray-200">Software Engineer <span class="text-gray-400 text-base ml-2">(July 2022-Dec 2022)</span></h5>
+                <ul class="list-disc list-inside text-gray-300 mt-2 space-y-1">
+                    <li>Develop web based Micro finance applications for BRAC.</li>
+                    <li>Integrate new features (ex: Keycloak) on existing Legacy Application.</li>
+                    <li>Important migration script that made the migration process 25% faster.</li>
+                    <li>Framework & tools - Laravel, CodeIgniter, Yii.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="mb-8 pb-4 border-b border-gray-700 last:border-b-0 last:mb-0">
+            <h4 class="text-2xl font-semibold text-blue-400 mb-2">Sheba Platform Limited (sheba.xyz/ Now Polygon Technology)</h4>
+            <p class="text-gray-300 text-lg mb-4">Dhaka, Bangladesh</p>
+            <div class="mb-4">
+                <h5 class="text-xl font-medium text-gray-200">Software Engineer <span class="text-gray-400 text-base ml-2">(Feb 2022-July 2022)</span></h5>
+                <ul class="list-disc list-inside text-gray-300 mt-2 space-y-1">
+                    <li>Develop APIs for sManager mobile app on different projects and Platform ex- Accounting (FastAPI Python), API Project (PHP Laravel), Partner Project (PHP Laravel).</li>
+                    <li>URL shortener (Flask python) that makes the application 25% efficient.</li>
+                    <li>Work With Repository, Service Design pattern and deployment of Project in Cloud Server.</li>
+                    <li>REDIS and other Service integration.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="mb-8 pb-4 border-b border-gray-700 last:border-b-0 last:mb-0">
+            <h4 class="text-2xl font-semibold text-blue-400 mb-2">LABAID (LifePlusBD)</h4>
+            <p class="text-gray-300 text-lg mb-4">Dhaka, Bangladesh</p>
+            <div class="mb-4">
+                <h5 class="text-xl font-medium text-gray-200">Software Engineer <span class="text-gray-400 text-base ml-2">(Feb 2021-Feb 2022)</span></h5>
+                <ul class="list-disc list-inside text-gray-300 mt-2 space-y-1">
+                    <li>Develop the POC (Proof Of Concept) for a successful new approach and pattern to improve development 20% faster.</li>
+                    <li>Design features System Architectures, Develop API to integrate with mobile app.</li>
+                    <li>Develop web server side solution With MVC Architecture with PHP, ES6. And configure & Management of AWS Services.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="mb-8 pb-4 border-b border-gray-700 last:border-b-0 last:mb-0">
+            <h4 class="text-2xl font-semibold text-blue-400 mb-2">Asiatic Optimum Services Ltd</h4>
+            <p class="text-gray-300 text-lg mb-4">Dhaka, Bangladesh</p>
+            <div class="mb-4">
+                <h5 class="text-xl font-medium text-gray-200">JR Software Engineer <span class="text-gray-400 text-base ml-2">(Sep 2020-Jan 2021)</span></h5>
+                <ul class="list-disc list-inside text-gray-300 mt-2 space-y-1">
+                    <li>Develop Web applications Using MVC with PHP, Laravel Framework. Deploy project on VPS server.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="mb-8 pb-4 border-b border-gray-700 last:border-b-0 last:mb-0">
+            <h4 class="text-2xl font-semibold text-blue-400 mb-2">Advance Technology Consortium Ltd (ATCL)</h4>
+            <p class="text-gray-300 text-lg mb-4">Dhaka, Bangladesh</p>
+            <div class="mb-4">
+                <h5 class="text-xl font-medium text-gray-200">Support Engineer <span class="text-gray-400 text-base ml-2">(June 2018-Aug 2020)</span></h5>
+                <ul class="list-disc list-inside text-gray-300 mt-2 space-y-1">
+                    <li>Provide full automation of Windows Form Application (c#, .net) support. Develop and automate the inventory, accounts, bill controlling into a compact.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="bg-gray-800 p-8 rounded-lg shadow-lg mb-12">
+        <h3 class="text-3xl font-bold text-gray-50 mb-8 section-title">Projects</h3>
+        <div class="mb-8 pb-4 border-b border-gray-700 last:border-b-0 last:mb-0">
+            <h4 class="text-2xl font-semibold text-blue-400 mb-4">Software</h4>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Project cards will be dynamically inserted here by JavaScript -->
+            </div>
+        </div>
+        <div class="mb-8 pb-4 border-b border-gray-700 last:border-b-0 last:mb-0">
+            <h4 class="text-2xl font-semibold text-blue-400 mb-4">Hardware</h4>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Project cards will be dynamically inserted here by JavaScript -->
+            </div>
+        </div>
+        <div class="mb-8 pb-4 border-b border-gray-700 last:border-b-0 last:mb-0">
+            <h4 class="text-2xl font-semibold text-blue-400 mb-4">Machine Learning</h4>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Project cards will be dynamically inserted here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="bg-gray-800 p-8 rounded-lg shadow-lg mb-12">
+        <h3 class="text-3xl font-bold text-gray-50 mb-8 section-title">Skills & Tech Stack</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div>
+                <h4 class="text-xl font-semibold text-blue-400 mb-3">Programming Languages & Frameworks</h4>
+                <div class="flex flex-wrap gap-2">
+                    <span class="bg-blue-700 text-blue-100 text-sm font-medium px-3 py-1 rounded-full shadow-sm">Python</span>
+                    <span class="bg-blue-700 text-blue-100 text-sm font-medium px-3 py-1 rounded-full shadow-sm">PHP</span>
+                    <span class="bg-blue-700 text-blue-100 text-sm font-medium px-3 py-1 rounded-full shadow-sm">React.js</span>
+                    <span class="bg-blue-700 text-blue-100 text-sm font-medium px-3 py-1 rounded-full shadow-sm">Django</span>
+                    <span class="bg-blue-700 text-blue-100 text-sm font-medium px-3 py-1 rounded-full shadow-sm">FastAPI</span>
+                    <span class="bg-blue-700 text-blue-100 text-sm font-medium px-3 py-1 rounded-full shadow-sm">Laravel</span>
+                    <span class="bg-blue-700 text-blue-100 text-sm font-medium px-3 py-1 rounded-full shadow-sm">Flask</span>
+                </div>
+            </div>
+            <div>
+                <h4 class="text-xl font-semibold text-blue-400 mb-3">Services</h4>
+                <div class="flex flex-wrap gap-2">
+                    <span class="bg-green-700 text-green-100 text-sm font-medium px-3 py-1 rounded-full shadow-sm">Redis</span>
+                    <span class="bg-green-700 text-green-100 text-sm font-medium px-3 py-1 rounded-full shadow-sm">Celery</span>
+                    <span class="bg-green-700 text-green-100 text-sm font-medium px-3 py-1 rounded-full shadow-sm">Swagger</span>
+                    <span class="bg-green-700 text-green-100 text-sm font-medium px-3 py-1 rounded-full shadow-sm">RabbitMQ</span>
+                </div>
+            </div>
+            <div>
+                <h4 class="text-xl font-semibold text-blue-400 mb-3">Server</h4>
+                <div class="flex flex-wrap gap-2">
+                    <span class="bg-yellow-700 text-yellow-100 text-sm font-medium px-3 py-1 rounded-full shadow-sm">AWS</span>
+                    <span class="bg-yellow-700 text-yellow-100 text-sm font-medium px-3 py-1 rounded-full shadow-sm">Bitbucket</span>
+                    <span class="bg-yellow-700 text-yellow-100 text-sm font-medium px-3 py-1 rounded-full shadow-sm">S3</span>
+                    <span class="bg-yellow-700 text-yellow-100 text-sm font-medium px-3 py-1 rounded-full shadow-sm">MinIO</span>
+                    <span class="bg-yellow-700 text-yellow-100 text-sm font-medium px-3 py-1 rounded-full shadow-sm">CloudFront</span>
+                    <span class="bg-yellow-700 text-yellow-100 text-sm font-medium px-3 py-1 rounded-full shadow-sm">Nginx</span>
+                </div>
+            </div>
+            <div>
+                <h4 class="text-xl font-semibold text-blue-400 mb-3">Database</h4>
+                <div class="flex flex-wrap gap-2">
+                    <span class="bg-red-700 text-red-100 text-sm font-medium px-3 py-1 rounded-full shadow-sm">MySQL</span>
+                    <span class="bg-red-700 text-red-100 text-sm font-medium px-3 py-1 rounded-full shadow-sm">Postgres</span>
+                    <span class="bg-red-700 text-red-100 text-sm font-medium px-3 py-1 rounded-full shadow-sm">MongoDB</span>
+                </div>
+            </div>
+            <div>
+                <h4 class="text-xl font-semibold text-blue-400 mb-3">Tools</h4>
+                <div class="flex flex-wrap gap-2">
+                    <span class="bg-purple-700 text-purple-100 text-sm font-medium px-3 py-1 rounded-full shadow-sm">Git</span>
+                    <span class="bg-purple-700 text-purple-100 text-sm font-medium px-3 py-1 rounded-full shadow-sm">Jira</span>
+                    <span class="bg-purple-700 text-purple-100 text-sm font-medium px-3 py-1 rounded-full shadow-sm">Docker</span>
+                    <span class="bg-purple-700 text-purple-100 text-sm font-medium px-3 py-1 rounded-full shadow-sm">Slack</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="bg-gray-800 p-8 rounded-lg shadow-lg mb-12">
+        <h3 class="text-3xl font-bold text-gray-50 mb-8 section-title">Education</h3>
+        <div class="mb-6 pb-4 border-b border-gray-700 last:border-b-0 last:mb-0">
+            <h4 class="text-2xl font-semibold text-blue-400 mb-1">BSc, COMPUTER SCIENCE AND ENGINEERING</h4>
+            <p class="text-gray-300 text-lg">United International University (UIU), Dhaka, Bangladesh</p>
+            <p class="text-gray-400 text-base">2015-2019</p>
+        </div>
+        <div class="mb-6 pb-4 border-b border-gray-700 last:border-b-0 last:mb-0">
+            <h4 class="text-2xl font-semibold text-blue-400 mb-1">HSC</h4>
+            <p class="text-gray-300 text-lg">BAF Shaheen College, Dhaka</p>
+            <p class="text-400 text-base">2012-2014</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="bg-gray-800 p-8 rounded-lg shadow-lg">
+        <h3 class="text-3xl font-bold text-gray-50 mb-8 section-title">Contact</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-lg text-gray-300">
+            <p><strong class="text-gray-100">Location:</strong> Dhaka, Bangladesh</p>
+            <p><strong class="text-gray-100">Phone:</strong> +880-16812-31269</p>
+            <p><strong class="text-gray-100">Email:</strong> <a href="mailto:fazleybiswas143@gmail.com" class="text-blue-400 hover:underline">fazleybiswas143@gmail.com</a></p>
+            <p><strong class="text-gray-100">LinkedIn:</strong> <a href="http://linkedin.com/in/fazley-rabbi-68432711b" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:underline">LinkedIn</a></p>
+            <p><strong class="text-gray-100">GitHub:</strong> <a href="http://github.com/Fzrabbi" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:underline">GitHub</a></p>
+            <p><strong class="text-gray-100">Leetcode:</strong> <a href="http://leetcode.com/u/FazleyRabbi/" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:underline">Leetcode</a></p>
+        </div>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer class="bg-gray-950 text-white text-center py-6 mt-12 rounded-t-lg">
+    <p>&copy; 2025 FAZLEY RABBI. All rights reserved.</p>
+</footer>
+
+<!-- Project Modal Structure -->
+<div id="projectModal" class="modal-overlay">
+    <div class="modal-content w-11/12 md:w-3/4 lg:w-1/2">
+        <button class="modal-close-button" onclick="closeModal('projectModal')">&times;</button>
+        <h3 id="modalProjectTitle" class="text-2xl font-bold text-blue-400 mb-4"></h3>
+        <p class="text-gray-300 text-base leading-relaxed mb-2"><strong class="text-gray-100">Role:</strong> <span id="modalProjectRole"></span></p>
+        <p class="text-gray-300 text-base leading-relaxed mb-2"><strong class="text-gray-100">Technologies:</strong> <span id="modalProjectTechnologies"></span></p>
+        <p class="text-gray-300 text-base leading-relaxed"><strong class="text-gray-100">Description:</strong> <span id="modalProjectDescription"></span></p>
+    </div>
+</div>
+
+<!-- Resume Modal Structure -->
+<div id="resumeModal" class="modal-overlay">
+    <div class="modal-content w-11/12 md:w-3/4 lg:w-2/3 xl:w-1/2">
+        <button class="modal-close-button" onclick="closeModal('resumeModal')">&times;</button>
+        <h3 class="text-2xl font-bold text-blue-400 mb-4">My Resume</h3>
+        <div class="flex justify-center mb-4">
+            <a id="resumeDownloadLink" href="./resources/resume.pdf" download="FazleyRabbi_Resume.pdf" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full transition-all duration-300 shadow-lg">
+                Download Resume (PDF)
+            </a>
+        </div>
+        <iframe id="resumeIframe" src="./resources/resume.pdf" class="resume-iframe"></iframe>
+    </div>
+</div>
+
+</body>
+</html>
